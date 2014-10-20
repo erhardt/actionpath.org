@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Action Path is a mobile app for civic engagement produced by Erhardt Graeff at the MIT Center for Civic Media.">
     <meta name="author" content="Erhardt Graeff">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="media/logo.png">
 
     <title>Action Path</title>
 
@@ -18,20 +18,31 @@
 
     <!-- JQuery + Boostrap core Javascript -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
     <script src="js/jquery.fitvids.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </head>
 
   <body>
 
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Presentation at 2014 Knight-MIT Civic Media Conference</h4>
+          </div>
+          <div class="modal-body vids">
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+        <ul class="nav pull-right">
+		  <li><a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">Watch Explanatory Video</a></li>
+		</ul>
+        <img class="logo" src="media/logo.png" alt="Action Path logo">
         <h3 class="text-muted">Action Path</h3>
       </div>
 
@@ -49,49 +60,38 @@
         <div class="carousel-inner">
           <div class="item active">
             <img src="media/slide1-thumb.png" alt="Slide 1" style="cursor:pointer;" onclick="loadVideo()">
-            <iframe style="display:none;" src="http://player.vimeo.com/video/99736172?api=1&amp;title=0&amp;byline=0&amp;portrait=0#t=40m40s" width="700" height="394" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            <div class="carousel-caption">
-              <span>Presentation at Knight-MIT Civic Media Conference, June 2014.</span>
-            </div>
+            <button id="video_button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Play Video</button>
           </div>
-          <div class="item">
-            <img src="media/slide2-thumb.png" alt="Slide 2">
-            <div class="carousel-caption">
-              <span>Imagine you are in Kendall Square, Cambridge and you get a push notification from your smartphone.</span>
-            </div>
-          </div>
-          <div class="item">
-            <img src="media/slide3-thumb.png" alt="Slide 3">
-            <div class="carousel-caption">
-              <span>Action Path asks you to answer a one-question survey about a proposed development on the block.</span>
-            </div>
-          </div>
-          <div class="item">
-            <img src="media/slide4-thumb.png" alt="Slide 4">
-            <div class="carousel-caption">
-              <span>While waiting for the bus, you can learn about an issue, provided feedback on it, and subscribed to updates about it.</span>
-            </div>
-          </div>
-          <div class="item">
+          <div class="item no-video">
             <img src="media/slide5-thumb.png" alt="Slide 5">
             <div class="carousel-caption">
-              <span>Action Path employs Jane Jacobs' idea of routine monitoring of the city and aggregates it for impact through mobile tech.</span>
+              <span>Action Path uses mobile technology and crowdsourcing to help Jane Jacobs-style monitorial citizens achieve greater impact.</span>
+            </div>
+          </div>
+          <div class="item no-video">
+            <img src="media/slide2-thumb.png" alt="Slide 2">
+            <div class="carousel-caption">
+              <span>Imagine you're in Kendall Square near MIT and Action Path sends you a site-specific notification.</span>
+            </div>
+          </div>
+          <div class="item no-video">
+            <img src="media/slide3-thumb.png" alt="Slide 3">
+            <div class="carousel-caption">
+              <span>You are asked to answer one-question survey about a proposed development project.</span>
+            </div>
+          </div>
+          <div class="item no-video">
+            <img src="media/slide4-thumb.png" alt="Slide 4">
+            <div class="carousel-caption">
+              <span>Using Action Path, you quickly learn about the issue, provide feedback, and subscribe to future updates about it.</span>
             </div>
           </div>
         </div>
 
         <!-- Controls -->	
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">&lsaquo;</a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">&rsaquo;</a>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
       </div>
-
-<!--
-      <div class="jumbotron">
-        <h1>Jumbotron heading</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
-      </div>
--->
 
       <div class="row marketing">
         <div class="col-lg-6">
@@ -111,21 +111,25 @@
       </div>
 
       <div class="footer">
-        <p>&copy; Erhardt Graeff and MIT Center for Civic Media 2014</p>
+        <div class="col-lg-6">
+          <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>&nbsp;&nbsp;This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Erhardt Graeff</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+        </div>
+        <div class="footer-right col-lg-6">
+          <a href="https://civic.mit.edu"><img height="60" src="media/civic-logo.png" alt="MIT Center for Civic Media logo"></a>
+          <a href="http://media.mit.edu"><img height="15" src="media/ml-logo.png" alt="MIT Media Lab logo"></a>
+        </div>
       </div>
 
     </div> <!-- /container -->
     <script type="text/javascript">
-
-
-      function loadVideo() {
-      	$(".item.active > img").hide();
-      	$(".item.active > iframe").show();
-      }
-
-      $(document).ready(function(){
+      $(".modal").on("show.bs.modal", function(){
+        $(".vids").append('<iframe id="player" style="margin:0 auto;" src="http://player.vimeo.com/video/99736172?api=1&amp;player_id=player&amp;title=0&amp;byline=0&amp;portrait=0#t=40m40s" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
         // dynamically resize video iframes
         $(".vids").fitVids();
+      });
+
+      $(".modal").on("hide.bs.modal", function() {
+      	$(".vids .fluid-width-video-wrapper").remove();
       });
     </script>
   </body>
