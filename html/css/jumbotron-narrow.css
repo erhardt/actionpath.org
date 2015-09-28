@@ -14,8 +14,10 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 19px;
+}
+
+.nav-pills>li>a {
+    margin-left: 5px;
 }
 
 img.logo {
@@ -30,7 +32,7 @@ img.logo {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 40px;
-  color:rgb(255,64,19);
+  color: #FF2834;
   text-shadow:1px 1px #eee;
   display: inline;
 }
@@ -49,8 +51,8 @@ img.logo {
 }
 
 .footer-right img {
-  padding-left: 30px;
-  padding-right: 15px;
+  float:right;
+  margin: -15px -15px 0 0;
 }
 
 /* Customize container */
